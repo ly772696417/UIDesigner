@@ -69,6 +69,12 @@
     <ClInclude Include="Sprite.h">
       <Filter>D3D</Filter>
     </ClInclude>
+    <ClInclude Include="DrawLeftScence.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawRightScence.h">
+      <Filter>D3D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UIDesigner.cpp">
@@ -110,6 +116,12 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>D3D</Filter>
     </ClCompile>
+    <ClCompile Include="DrawLeftScence.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawRightScence.cpp">
+      <Filter>D3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UIDesigner.rc">
@@ -131,5 +143,10 @@
     <Image Include="res\Toolbar.bmp">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\texShader.fx">
+      <Filter>资源文件</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

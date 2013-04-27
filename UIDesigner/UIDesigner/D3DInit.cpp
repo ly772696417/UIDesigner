@@ -19,22 +19,6 @@ D3DInit::~D3DInit(void)
 	m_pD3DDevice = NULL;
 }
 
-BOOL D3DInit::GameInit()
-{
-	if (SUCCEEDED(this->InitD3D()))
-	{
-		//scence process
-		m_pDrawScence = new DrawScence(m_pD3DDevice,m_hWnd);
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-
-	return TRUE;
-}
-
 HRESULT D3DInit::InitD3D(){
 	if (!(m_pD3D = Direct3DCreate9(D3D_SDK_VERSION)))
 	{
@@ -74,21 +58,4 @@ HRESULT D3DInit::InitD3D(){
 	}
 
 	return S_OK;
-}
-
-void D3DInit::Render(CPoint movePoint,CPoint clickPoint)
-{
-	if (NULL == m_pD3DDevice)
-	{
-		return;
-	}
-
-	m_pD3DDevice->Clear(0,NULL,D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER,
-		D3DCOLOR_XRGB(255,255,255),1.0f,0);
-	m_pD3DDevice->BeginScene();
-	
-	m_pDrawScence->Render(movePoint,clickPoint);
-
-	m_pD3DDevice->EndScene();
-	m_pD3DDevice->Present(NULL,NULL,NULL,NULL);
 }

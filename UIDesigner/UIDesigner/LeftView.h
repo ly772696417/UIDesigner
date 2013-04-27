@@ -2,11 +2,19 @@
 
 #include "stdafx.h"
 
+#include "D3DInit.h"
+#include "DrawLeftScence.h"
+#include "DrawRightScence.h"
+
 // LeftView йсм╪
 
 class LeftView : public CView
 {
 	DECLARE_DYNCREATE(LeftView)
+
+public:
+	DrawLeftScence *m_drawLeftScence;
+	HWND hWnd;
 
 public:
 	static LeftView *Singleton() { return m_pSingleton;}
@@ -29,6 +37,9 @@ public:
 
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	virtual void OnInitialUpdate();
 };
 
 

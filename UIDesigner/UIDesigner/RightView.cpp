@@ -94,8 +94,7 @@ void RightView::OnInitialUpdate()
 
 	// TODO: 在此添加专用代码和/或调用基类
 
-	m_pD3DInit = new D3DInit(this->GetSafeHwnd());
-	m_pD3DInit->GameInit();
+	m_drawRightScence = new DrawRightScence(this->GetSafeHwnd());
 
 	m_clickPoint = CPoint(-1,-1);
 	this->SetTimer(1,100,0);
@@ -107,6 +106,5 @@ void RightView::OnTimer(UINT_PTR nIDEvent)
 	// TODO: 在此添加消息处理程序代码和/或调用默认值
 
 	CView::OnTimer(nIDEvent);
-
-	m_pD3DInit->Render(m_movePoint,m_clickPoint);
+	m_drawRightScence->Render(m_movePoint,m_clickPoint);
 }

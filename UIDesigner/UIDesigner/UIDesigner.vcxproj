@@ -105,6 +105,8 @@
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="D3DInit.h" />
+    <ClInclude Include="DrawLeftScence.h" />
+    <ClInclude Include="DrawRightScence.h" />
     <ClInclude Include="DrawScence.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="LeftView.h" />
@@ -123,6 +125,8 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="D3DInit.cpp" />
+    <ClCompile Include="DrawLeftScence.cpp" />
+    <ClCompile Include="DrawRightScence.cpp" />
     <ClCompile Include="DrawScence.cpp" />
     <ClCompile Include="LeftView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
@@ -148,6 +152,11 @@
     <Image Include="res\Toolbar.bmp" />
     <Image Include="res\UIDesigner.ico" />
     <Image Include="res\UIDesignerDoc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\texShader.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">vs_main</EntryPointName>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

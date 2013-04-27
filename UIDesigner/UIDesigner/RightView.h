@@ -3,6 +3,7 @@
 #include "stdafx.h"
 
 #include "D3DInit.h"
+#include "DrawRightScence.h"
 
 // RightView йсм╪
 
@@ -11,7 +12,9 @@ class RightView : public CView
 	DECLARE_DYNCREATE(RightView)
 
 public:
-	D3DInit *m_pD3DInit;
+	DrawRightScence *m_drawRightScence;
+
+	inline DrawRightScence * GetDrawRightView()const { return m_drawRightScence; }
 
 	CPoint m_movePoint;
 	CPoint m_clickPoint;

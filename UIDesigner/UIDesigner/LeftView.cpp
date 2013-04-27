@@ -5,6 +5,7 @@
 #include "UIDesigner.h"
 
 #include "LeftView.h"
+#include "RightView.h"
 
 
 LeftView *LeftView::m_pSingleton = NULL;
@@ -23,6 +24,7 @@ LeftView::~LeftView()
 }
 
 BEGIN_MESSAGE_MAP(LeftView, CView)
+	ON_WM_TIMER()
 END_MESSAGE_MAP()
 
 
@@ -53,3 +55,26 @@ void LeftView::Dump(CDumpContext& dc) const
 
 
 // LeftView 消息处理程序
+
+void LeftView::OnInitialUpdate()
+{
+	CView::OnInitialUpdate();
+
+	// TODO: 在此添加专用代码和/或调用基类
+
+	m_drawLeftScence = new DrawLeftScence(this->GetSafeHwnd());
+
+	this->SetTimer(1,100,0);
+}
+
+void LeftView::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+
+	CView::OnTimer(nIDEvent);
+	m_drawLeftScence->SetPlaneData(RightView::Singleton()->m_drawRightScence->GetPlaneData());
+	m_drawLeftScence->Render();
+}
+
+
+

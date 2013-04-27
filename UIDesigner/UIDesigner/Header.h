@@ -19,6 +19,23 @@ struct PLANEVERTEX
 
 #define D3DFVF_PLANEVERTEX  (D3DFVF_XYZ | D3DFVF_DIFFUSE | D3DFVF_TEX1)
 
+struct CUSTOMVERTEX
+{
+	FLOAT _x,_y,_z;
+	FLOAT _nx,_ny,_nz;
+	FLOAT _u,_v;
+	CUSTOMVERTEX(FLOAT x,FLOAT y,FLOAT z,
+				 FLOAT nx,FLOAT ny,FLOAT nz,
+				 FLOAT u,FLOAT v)
+	{
+		_x = x,_y = y,_z = z;
+		_nx = nx,_ny = ny,_nz = nz;
+		_u = u,_v = v;
+	}
+};
+
+#define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZ | D3DFVF_NORMAL | D3DFVF_TEX1)
+
 typedef struct PlaneData
 {
 	CPoint anchorPoint;
